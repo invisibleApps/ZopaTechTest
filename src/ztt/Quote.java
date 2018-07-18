@@ -8,7 +8,7 @@ import java.io.File;
 import java.io.IOException;
 
 public class Quote {
-    public static final int months = 36;
+    public static final int MONTHS = 36;
     private static int amount;
 
     public static void main(String[] args) throws IOException {
@@ -21,7 +21,7 @@ public class Quote {
             else {
 
                 try {
-                    Contract contract = new SVSContract(lendersFile, amount, months);
+                    Contract contract = new SVSContract(lendersFile, amount, MONTHS);
                     System.out.println(contract);
                 } catch (CanNotCreateContractException e) {
                     System.out.println("It is not possible to provide a quote at that time.");

@@ -34,10 +34,9 @@ public class SVSContract implements Contract {
             this.rate = new SVSRate(contractLenders);
             this.amount = amount;
             this.months = months;
-            BigDecimal mRepayment = BigDecimal.valueOf(0);
 
             for (Lender lender : contractLenders.getLenders()) {
-
+                BigDecimal mRepayment = BigDecimal.valueOf(0);
                 mRepayment = calculateMonthRepayment(lender.getContractAmount(), months, rate.getRate());
                 monthRepayment = monthRepayment.add(mRepayment);
             }
