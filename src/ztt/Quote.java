@@ -34,7 +34,7 @@ public class Quote {
     public static boolean isAmountCorrect(String amountValue) {
         try {
             amount = Integer.parseInt(amountValue);
-            if (amount % 100 != 0 || amount <= 0) return false;
+            if (amount % 100 != 0 || amount < 1000 || amount > 15000 ) return false;
             else return true;
         } catch (NumberFormatException e) {
         }
